@@ -858,19 +858,26 @@
       // GitHub raw files URL pattern for Material Symbols
       const baseUrl = 'https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web';
       
-      // Build filename: iconName[_wght{weight}][_grad{grade}][fill1]_{size}px.svg
-      // Note: weight 400 and grade 0 are omitted (defaults)
+      // Build filename: iconName_[wght{weight}][grad{grade}][fill1]_{size}px.svg
+      // Pattern: always underscore after name, params concatenated, underscore before size
       let filename = iconName;
+      let paramString = '';
+      
       if (weight !== 400) {
-        filename += `_wght${weight}`;
+        paramString += `wght${weight}`;
       }
       if (grade !== 0) {
-        // Handle negative grade values (N25 for -25)
+        // Handle negative grade values (gradN25 for -25)
         const gradeParam = grade < 0 ? `gradN${Math.abs(grade)}` : `grad${grade}`;
-        filename += `_${gradeParam}`;
+        paramString += gradeParam;
       }
       if (fill) {
-        filename += 'fill1';
+        paramString += 'fill1';
+      }
+      
+      // Add params with underscore if any exist
+      if (paramString) {
+        filename += `_${paramString}`;
       }
       filename += `_${size}px.svg`;
       

@@ -88,7 +88,7 @@ The plugin fetches icons from Google's Material Symbols repository:
 https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/{iconName}/{style}/{filename}
 ```
 
-Filename format: `{iconName}[_wght{weight}][_grad{grade}][fill1]_{size}px.svg`
+Filename format: `{iconName}_[wght{weight}][grad{grade}][fill1]_{size}px.svg`
 
 ## Contributing
 

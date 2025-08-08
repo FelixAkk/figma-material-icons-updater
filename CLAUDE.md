@@ -20,7 +20,7 @@ A Figma plugin that updates Material Icons components to Material Symbols. The p
 ## API Integration
 - **Source**: GitHub raw files from `google/material-design-icons/master/symbols/web/`
 - **URL Pattern**: `{baseUrl}/{iconName}/{style}/{filename}`
-- **Filename Logic**: `iconName[_wght{weight}][_grad{grade}][fill1]_{size}px.svg`
+- **Filename Logic**: `iconName_[wght{weight}][grad{grade}][fill1]_{size}px.svg`
 - **Defaults**: Weight 400 and grade 0 omitted from filenames
 - **Grade Handling**: Negative values use `gradN{abs}` format (e.g., `gradN25` for -25)
 
